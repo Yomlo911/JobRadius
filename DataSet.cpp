@@ -12,7 +12,6 @@ using namespace std;
 // ------------------------------------------------------------
 //  Utility: lower-case copy of a string.
 //  Used everywhere a skill or district is compared, so that
-//  "C++", "c++" and "C++ " style variants do not break lookups.
 // ------------------------------------------------------------
 string toLower(const string& s) {
     string out = s;
