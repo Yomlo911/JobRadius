@@ -44,7 +44,7 @@ public:
         : id(id), title(title), company(company),
           district(district), skills(skills), salary(salary) {}
 
-    // ----- getters (read-only access to private data) -----
+    // ----- getters (read-only access to 
     int getId() const                         { return id; }
     const string& getTitle() const            { return title; }
     const string& getCompany() const          { return company; }
