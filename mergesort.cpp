@@ -4,7 +4,7 @@
 //  highest score to the lowest. std::sort is NOT used.
 //  It has no dependency on the other modules, so it can be built
 //  and tested alone, then pasted into jobradius.cpp unchanged.
-//  Build:  g++ -std=c++17 -Wall -Wextra -o mergesort mergesort.
+//  Build:  g++ -std=c++17 -Wall -Wextra -o mergesort 
 // ============================================================
 #include <iostream>
 #include <string>
