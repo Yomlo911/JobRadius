@@ -21,7 +21,7 @@ struct ScoredJob {
 //  Merge two sorted halves a[lo..mid] and a[mid+1..hi] into one
 //  sorted run, using `tmp` as scratch space.
 //  Using ">=" takes from the LEFT half on a tie, so equal scores
-//  keep their original order (the sort is stable).
+//  keep their original order (the sort is stable)
 // ------------------------------------------------------------
 void mergeHalves(vector<ScoredJob>& a, vector<ScoredJob>& tmp,
                  int lo, int mid, int hi) {
@@ -39,7 +39,7 @@ void mergeHalves(vector<ScoredJob>& a, vector<ScoredJob>& tmp,
     for (int x = lo; x <= hi; x++) a[x] = tmp[x];
 }
 
-// Split a[lo..hi] in two, sort each half, then merge them.
+// Split a[lo..hi] in two, sort each half, then merge them
 void mergeSortRange(vector<ScoredJob>& a, vector<ScoredJob>& tmp, int lo, int hi) {
     if (lo >= hi) return;                 // 0 or 1 item: already sorted
     int mid = lo + (hi - lo) / 2;
@@ -48,7 +48,7 @@ void mergeSortRange(vector<ScoredJob>& a, vector<ScoredJob>& tmp, int lo, int hi
     mergeHalves(a, tmp, lo, mid, hi);
 }
 
-// Public entry point: sorts `a` by score, highest first. O(n log n).
+// Public entry point: sorts `a` by score, highest first. O(n log n)
 void mergeSort(vector<ScoredJob>& a) {
     if (a.size() < 2) return;
     vector<ScoredJob> tmp(a.size());
