@@ -97,7 +97,7 @@ vector<Job> loadSampleJobs() {
 
 // ============================================================
 //  MODULE 2: INDEX
-//  Two hash maps, built once at start-up:
+//
 //      skill    -> ids of jobs that need that skill
 //      district -> ids of jobs located in that district
 //  A lookup hashes the key and jumps straight to its bucket, so it
