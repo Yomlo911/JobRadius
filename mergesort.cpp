@@ -12,6 +12,7 @@
 using namespace std;
 
 // A job id paired with the score the ranking strategy gave it.
+
 struct ScoredJob {
     int jobId;
     double score;
@@ -23,6 +24,7 @@ struct ScoredJob {
 //  Using ">=" takes from the LEFT half on a tie, so equal scores
 //  keep their original order (the sort is stable)
 // ------------------------------------------------------------
+
 void mergeHalves(vector<ScoredJob>& a, vector<ScoredJob>& tmp,
                  int lo, int mid, int hi) {
     int i = lo;        // next unused item in the left half
