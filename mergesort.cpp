@@ -35,8 +35,8 @@ void mergeHalves(vector<ScoredJob>& a, vector<ScoredJob>& tmp,
         if (a[i].score >= a[j].score) tmp[k++] = a[i++];
         else                          tmp[k++] = a[j++];
     }
-    while (i <= mid) tmp[k++] = a[i++];   // left half leftovers
-    while (j <= hi)  tmp[k++] = a[j++];   // right half leftovers
+    while (i <= mid) tmp[k++] = a[i++];   // left side leftovers (before mid)
+    while (j <= hi)  tmp[k++] = a[j++];   // right half leftovers (after mid: mid+1)
 
     for (int x = lo; x <= hi; x++) a[x] = tmp[x];
 }
