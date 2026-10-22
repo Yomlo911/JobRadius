@@ -77,7 +77,7 @@ bool isDescending(const vector<ScoredJob>& v) {
     return true;
 }
 
-// Equal scores must keep their original (increasing id) order.
+// Equal scores must keep their original order.
 bool isStable(const vector<ScoredJob>& v) {
     for (size_t i = 1; i < v.size(); i++)
         if (v[i - 1].score == v[i].score && v[i - 1].jobId > v[i].jobId) return false;
