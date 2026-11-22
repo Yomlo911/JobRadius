@@ -7,18 +7,18 @@ vector<ScoredJob> make(const vector<double>& scores) {
     for (size_t i = 0; i < scores.size(); i++) v.push_back(ScoredJob{(int)i, scores[i]});
     return v;
 }
-
+//checks if jobs are in descending order based on scores
 bool isDescending(const vector<ScoredJob>& v) {
     for (size_t i = 1; i < v.size(); i++) if (v[i - 1].score < v[i].score) return false;
     return true;
 }
-
+//used for when 2 jobs have same score
 bool isStable(const vector<ScoredJob>& v) {
     for (size_t i = 1; i < v.size(); i++)
         if (v[i - 1].score == v[i].score && v[i - 1].jobId > v[i].jobId) return false;
     return true;
 }
-
+//checks if job ids from 0 to n-1 appear only once 
 bool isPermutation(const vector<ScoredJob>& v, size_t n) {
     vector<int> seen(n, 0);
     if (v.size() != n) return false;
@@ -29,7 +29,7 @@ bool isPermutation(const vector<ScoredJob>& v, size_t n) {
     for (size_t i = 0; i < n; i++) if (seen[i] != 1) return false;
     return true;
 }
-
+//whether the job ids match the expected result
 bool idsAre(const vector<ScoredJob>& v, const vector<int>& want) {
     if (v.size() != want.size()) return false;
     for (size_t i = 0; i < v.size(); i++) if (v[i].jobId != want[i]) return false;
