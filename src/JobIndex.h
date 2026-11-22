@@ -25,12 +25,12 @@ public:
             }
         }
     }
-
+   //returns jobs with the entered skills
     const vector<int>& jobsWithSkill(const string& skill) const {
         auto it = skillIndex.find(toLower(skill));
         return (it == skillIndex.end()) ? none : it->second;
     }
-
+  //returns jobs in the entered district
     const vector<int>& jobsInDistrict(const string& district) const {
         auto it = districtIndex.find(toLower(district));
         return (it == districtIndex.end()) ? none : it->second;
