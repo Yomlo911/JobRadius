@@ -23,4 +23,5 @@ inline vector<Job> loadSampleJobs() {
     jobs.push_back(Job(next++, "Python Automation Engineer", "FactoryAI",   "Udham Singh Nagar", {"Python", "Linux"},          580000));
     jobs.push_back(Job(next++, "Web Developer",              "AlmoraWeb",   "Almora",            {"JavaScript", "React"},       350000));
     return jobs;
+//outputs
 }
