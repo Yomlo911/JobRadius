@@ -5,7 +5,7 @@ int main() {
     cout << "Queue (Queue.h)\n";
     Queue<int> q;
     check(q.isEmpty() && q.size() == 0, "new queue is empty");
-
+    // checks fifo, enqueue, dequeue 
     q.enqueue(10); q.enqueue(20); q.enqueue(30);
     check(q.size() == 3 && !q.isEmpty(), "size is 3 after three enqueues");
     check(q.front() == 10, "front shows the oldest item without removing it");
