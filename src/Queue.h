@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include "utils.h"
 
-// First in, first out.
 template <typename T>
 class Queue {
 private:
@@ -22,12 +21,12 @@ public:
         if (head == items.size()) { items.clear(); head = 0; }
         return value;
     }
-
+   //returna front element without removing it
     const T& front() const {
         if (isEmpty()) throw runtime_error("front on empty queue");
         return items[head];
     }
 
-    bool isEmpty() const { return head == items.size(); }
-    size_t size() const  { return items.size() - head; }
+    bool isEmpty() const { return head == items.size(); }//tells if the queue is empty
+    size_t size() const  { return items.size() - head; } //returns number of elements in queue 
 };
