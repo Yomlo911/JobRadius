@@ -4,14 +4,14 @@
 #include "../src/JobIndex.h"
 #include "../src/DistrictGraph.h"
 #include "../src/JobSearch.h"
-
+//checks if result show the expected job ids
 bool matchesAre(const SearchResult& r, const vector<int>& ids, const vector<int>& hops) {
     if (r.matches.size() != ids.size()) return false;
     for (size_t i = 0; i < ids.size(); i++)
         if (r.matches[i].jobId != ids[i] || r.matches[i].hop != hops[i]) return false;
     return true;
 }
-
+//checks for duplicate district names
 bool noRepeats(const vector<string>& v) {
     unordered_set<string> seen(v.begin(), v.end());
     return seen.size() == v.size();
@@ -23,7 +23,7 @@ int main() {
     index.build(jobs);
     DistrictGraph graph = buildUttarakhandGraph();
     JobSearch searcher(index, graph);
-
+    //this part tests dis count, edge count, neighbouring districts, case insensitivity
     cout << "Module 3 (Graph)\n";
     check(graph.districtCount() == 7, "7 districts in the graph");
     check(graph.edgeCount() == 9, "9 border edges in the graph");
@@ -54,7 +54,7 @@ int main() {
         g2.addEdge("A", "A");
         check(g2.edgeCount() == 1 && g2.districtCount() == 2, "repeated edges and self-loops are ignored");
     }
-
+   //checks skill based job searching, bfs, handling of unknown districts
     cout << "Module 4 (Search)\n";
     check(intersectSorted({0, 1, 2, 3, 4}, {0, 2, 7, 12, 13}) == vector<int>({0, 2}), "intersection of district list and skill list");
     check(intersectSorted({}, {1, 2}).empty() && intersectSorted({1, 2}, {3, 4}).empty(), "intersection with an empty or disjoint list");
