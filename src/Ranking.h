@@ -9,7 +9,7 @@
 #include "JobSearch.h"
 #include "Sorting.h"
 
-// Module 5: Ranking (Strategy pattern)
+// Module 5: Ranking (Strategy patterns)
 struct UserProfile {
     string name;
     string preferredDistrict;
