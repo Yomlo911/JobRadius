@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Module 6: Sorting 
+// Module 6: Sorting (merge sorting )
 struct ScoredJob {
     int jobId;
     double score;
