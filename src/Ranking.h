@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <memory>
+#include <utility>
 #include <string>
 #include <vector>
 #include "Job.h"
@@ -66,9 +67,9 @@ private:
 
 public:
     RankingEngine(unique_ptr<RankingStrategy> initialStrategy)
-        : strategy(move(initialStrategy)) {}
+        : strategy(std::move(initialStrategy)) {}
 
-    void setStrategy(unique_ptr<RankingStrategy> newStrategy) { strategy = move(newStrategy); }
+    void setStrategy(unique_ptr<RankingStrategy> newStrategy) { strategy = std::move(newStrategy); }
 
     vector<ScoredJob> rank(const SearchResult& searchResult, const vector<Job>& allJobs, const UserProfile& user) const {
         vector<ScoredJob> scoredList;
