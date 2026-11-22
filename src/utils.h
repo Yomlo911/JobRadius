@@ -17,7 +17,7 @@ inline string trim(const string& s) {
     if (a == string::npos) return "";
     size_t b = s.find_last_not_of(" \t\r\n");
     return s.substr(a, b - a + 1);
-}
+} 
 
 inline bool allDigits(const string& s) {
     if (s.empty()) return false;
