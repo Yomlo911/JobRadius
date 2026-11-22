@@ -19,6 +19,7 @@ int main() {
     JobSearch searcher(index, graph);
     RankingEngine ranker(make_unique<MultiFactorStrategy>());
 
+    cout << "===============================================================\n\n";
     cout << "   JOB RADIUS: Regional Job Search Engine (Uttarakhand)\n";
     cout << "   Powered by Graph BFS, Inverted Index & Strategy Ranking\n";
     cout << "===============================================================\n\n";
