@@ -27,7 +27,7 @@ public:
     const string& getDistrict() const         { return district; }
     const vector<string>& getSkills() const   { return skills; }
     int getSalary() const                     { return salary; }
-
+   //list of skills required
     bool hasSkill(const string& skill) const {
         string wanted = toLower(skill);
         for (size_t i = 0; i < skills.size(); i++) {
