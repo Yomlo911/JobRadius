@@ -14,12 +14,12 @@ private:
     size_t edges;
 
     static bool contains(const vector<string>& v, const string& x) {
-        for (size_t i = 0; i < v.size(); i++) if (v[i] == x) return true;
+        for (size_t i = 0; i < v.size(); i++) if (v[i] == x) return true;  //linear search
         return false;
     }
-
+    //adds district to graph if they dont exist
     void addNode(const string& name) {
-        string key = toLower(name);
+        string key = toLower(name);        
         if (adj.find(key) == adj.end()) {
             adj[key] = vector<string>();
             displayName[key] = name;
@@ -28,7 +28,7 @@ private:
 
 public:
     DistrictGraph() : edges(0) {}
-
+    //connects 2 districts 
     void addEdge(const string& a, const string& b) {
         string ka = toLower(a), kb = toLower(b);
         if (ka == kb) return;
@@ -39,11 +39,11 @@ public:
         adj[kb].push_back(ka);
         edges++;
     }
-
+    //checks if district exists 
     bool hasDistrict(const string& district) const {
         return adj.find(toLower(district)) != adj.end();
     }
-
+    //returns connected districts
     const vector<string>& neighbors(const string& district) const {
         auto it = adj.find(toLower(district));
         return (it == adj.end()) ? none : it->second;
