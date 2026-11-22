@@ -13,12 +13,12 @@ struct Match {
     int jobId;
     int hop;
 };
-
+//stores search results
 struct SearchResult {
     vector<Match> matches;
     vector<string> districtsSearched;
     int farthestHop;
-    bool expanded() const { return districtsSearched.size() > 1; }
+    bool expanded() const { return districtsSearched.size() > 1; } //checks if search expanded beyond the district we entered
 };
 
 inline vector<int> intersectSorted(const vector<int>& a, const vector<int>& b) {
@@ -31,7 +31,7 @@ inline vector<int> intersectSorted(const vector<int>& a, const vector<int>& b) {
     }
     return out;
 }
-
+//initialises job index and district graph references
 class JobSearch {
 private:
     const JobIndex& index;
@@ -41,7 +41,7 @@ private:
 public:
     JobSearch(const JobIndex& index, const DistrictGraph& graph)
         : index(index), graph(graph) {}
-
+   //searches for jobs based on requirements entered
     SearchResult search(const string& district, const string& skill,
                         size_t threshold, int maxHops) const {
         SearchResult res;
